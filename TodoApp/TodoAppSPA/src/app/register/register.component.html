@@ -1,0 +1,23 @@
+<h1>Register</h1>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+    <label>
+      Username
+      <input type="text" formControlName="username">
+      <div *ngIf="submitted && registerForm.controls.username.errors" class="error">
+        <div *ngIf="registerForm.controls.username.errors.required">Username is required</div>
+      </div>
+    </label>
+  
+    <label>
+      Password
+      <input type="password" formControlName="password"/>
+      <div *ngIf="submitted && registerForm.controls.password.errors" class="error">
+        <div *ngIf="registerForm.controls.password.errors.required">Password is required</div>
+      </div>
+    </label>
+
+    <input type="submit" value="Register" class="cta">
+  
+  </form>

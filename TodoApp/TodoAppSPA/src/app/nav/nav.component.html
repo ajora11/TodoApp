@@ -1,0 +1,13 @@
+<header>
+  <div class="container">
+    <a routerLink="/" class="logo">{{ appTitle }}</a>
+    <nav>
+      <ul>
+          <!-- *ngIf="token.length < 5" -->
+        <li *ngIf="token.length == 0"><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li *ngIf="token.length == 0"><a routerLink="/register" routerLinkActive="active">Register</a></li>
+        <li *ngIf="token.length > 0"><a (click)="signOut()">Sign Out</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

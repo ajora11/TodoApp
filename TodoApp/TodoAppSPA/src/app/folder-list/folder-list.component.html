@@ -1,0 +1,29 @@
+<div class="containerDiv">
+  <div class="leftSide" *ngIf="folders">
+    <input class="addInput" type="text" [(ngModel)]="newFolderName">
+    <button (click)="newFolder()"> Create list</button> 
+    <ul>
+      <li *ngFor="let folder of folders" [ngClass]="{'selectedli': selectedFolderId==folder.id}" (click)="getFolderTodos(folder.id)">
+            <span> {{ folder.title }}  </span>
+            <span (click)="removeFolder(folder.id)" style="float: right;"><a>X</a></span>
+            
+      </li>
+    </ul>
+    
+  </div>
+
+  <div class="rightSide" *ngIf="todos">
+    <ul>
+      <li *ngFor="let todo of todos">
+            <span> {{ todo.title }} </span>
+            <span (click)="removeTodo(todo.id)" style="float: right"> X </span>
+            <span (click)="todoDone(todo.id)"> <input class="cbdone" type="checkbox"  style="float: right;"> </span>
+            
+      </li>
+    </ul>
+    <div>
+      <input class="addInput" style="margin-left:40px; " type="text" [(ngModel)]="newTodoName">
+      <button (click)="newTodo()" style="width: 195px;" > Add new to-do </button> 
+  </div>
+  </div>
+</div>
