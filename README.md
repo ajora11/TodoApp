@@ -15,7 +15,11 @@ Open "http://localhost:4200" in your browser
 To see SonarQube test coverage results, in TodoApp folder run these commands consecutively: 
 
 dotnet test TodoApp.TEST/TodoApp.TEST.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+
 dotnet build-server shutdown
+
 dotnet sonarscanner begin /k:"TodoApp" /d:sonar.host.url=http://localhost:9000 /d:sonar.cs.opencover.reportsPaths="TodoApp.TEST\coverage.opencover.xml" /d:sonar.coverage.exclusions="**Tests*.cs"
+
 dotnet build
+
 dotnet sonarscanner end
