@@ -7,7 +7,9 @@ In this project, I have used .NET Core v2.1 as back-end and Angular 7 as front-e
 To run project:
 
 Open a command line in TodoApp.API folder and run "dotnet run"
+
 Open a command line in TodoAppSPA folder and run "npm install" and "ng serve" consecutively
+
 Open "http://localhost:4200" in your browser
 
 To see SonarQube test coverage results, in TodoApp folder run these commands consecutively: 
